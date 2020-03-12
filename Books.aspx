@@ -18,23 +18,73 @@
     <h1>Author and Book Page</h1>
         Book and Author from query string<br />
         <br />
-        <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellPadding="3" CellSpacing="1" DataSourceID="ObjectDataSource2" GridLines="None" Height="152px" Width="490px">
-            <EditRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
-            <Fields>
-                <asp:BoundField DataField="BookTitle" HeaderText="BookTitle" SortExpression="BookTitle" />
-                <asp:BoundField DataField="PublishedYear" HeaderText="PublishedYear" SortExpression="PublishedYear" />
-                <asp:BoundField DataField="BookSummary" HeaderText="BookSummary" SortExpression="BookSummary" />
-                <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
-                <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
-            </Fields>
-            <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
-            <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
-            <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
-            <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
-        </asp:DetailsView>
+        <asp:FormView ID="FormView2" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ObjectDataSource2" GridLines="Horizontal" Width="313px">
+            <EditItemTemplate>
+                BookTitle:
+                <asp:TextBox ID="BookTitleTextBox" runat="server" Text='<%# Bind("BookTitle") %>' />
+                <br />
+                PublishedYear:
+                <asp:TextBox ID="PublishedYearTextBox" runat="server" Text='<%# Bind("PublishedYear") %>' />
+                <br />
+                BookSummary:
+                <asp:TextBox ID="BookSummaryTextBox" runat="server" Text='<%# Bind("BookSummary") %>' />
+                <br />
+                LastName:
+                <asp:TextBox ID="LastNameTextBox" runat="server" Text='<%# Bind("LastName") %>' />
+                <br />
+                FirstName:
+                <asp:TextBox ID="FirstNameTextBox" runat="server" Text='<%# Bind("FirstName") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <EditRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+            <FooterStyle BackColor="White" ForeColor="#333333" />
+            <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                BookTitle:
+                <asp:TextBox ID="BookTitleTextBox" runat="server" Text='<%# Bind("BookTitle") %>' />
+                <br />
+                PublishedYear:
+                <asp:TextBox ID="PublishedYearTextBox" runat="server" Text='<%# Bind("PublishedYear") %>' />
+                <br />
+                BookSummary:
+                <asp:TextBox ID="BookSummaryTextBox" runat="server" Text='<%# Bind("BookSummary") %>' />
+                <br />
+                LastName:
+                <asp:TextBox ID="LastNameTextBox" runat="server" Text='<%# Bind("LastName") %>' />
+                <br />
+                FirstName:
+                <asp:TextBox ID="FirstNameTextBox" runat="server" Text='<%# Bind("FirstName") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                BookTitle:
+                <asp:Label ID="BookTitleLabel" runat="server" Text='<%# Bind("BookTitle") %>' />
+                <br />
+                PublishedYear:
+                <asp:Label ID="PublishedYearLabel" runat="server" Text='<%# Bind("PublishedYear") %>' />
+                <br />
+                BookSummary:
+                <asp:Label ID="BookSummaryLabel" runat="server" Text='<%# Bind("BookSummary") %>' />
+                <br />
+                LastName:
+                <asp:Label ID="LastNameLabel" runat="server" Text='<%# Bind("LastName") %>' />
+                <br />
+                FirstName:
+                <asp:Label ID="FirstNameLabel" runat="server" Text='<%# Bind("FirstName") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="White" ForeColor="#333333" />
+        </asp:FormView>
+        <br />
         <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetDataByAuthorID" TypeName="DataSetTableAdapters.BooksandAuthorsTableAdapter">
             <SelectParameters>
-                <asp:QueryStringParameter Name="AuthorID" QueryStringField="AuthorId" Type="Int32" />
+                <asp:QueryStringParameter Name="AuthorID" QueryStringField="AuthorID" Type="Int32" />
             </SelectParameters>
         </asp:ObjectDataSource>
         <br />
@@ -42,14 +92,14 @@
         <br />
         <br />
         rows of data in the Books table<br />
-        <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="BookID" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None">
+        <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataSourceID="ObjectDataSource6" ForeColor="Black" GridLines="None">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <Columns>
-                <asp:BoundField DataField="BookID" HeaderText="BookID" InsertVisible="False" ReadOnly="True" SortExpression="BookID" />
                 <asp:BoundField DataField="BookTitle" HeaderText="BookTitle" SortExpression="BookTitle" />
-                <asp:BoundField DataField="BookSummary" HeaderText="BookSummary" SortExpression="BookSummary" />
-                <asp:BoundField DataField="AuthorID" HeaderText="AuthorID" SortExpression="AuthorID" />
                 <asp:BoundField DataField="PublishedYear" HeaderText="PublishedYear" SortExpression="PublishedYear" />
+                <asp:BoundField DataField="BookSummary" HeaderText="BookSummary" SortExpression="BookSummary" />
+                <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
+                <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
             </Columns>
             <FooterStyle BackColor="Tan" />
             <HeaderStyle BackColor="Tan" Font-Bold="True" />
@@ -60,7 +110,7 @@
             <SortedDescendingCellStyle BackColor="#E1DB9C" />
             <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:AuthorsConnectionString %>" SelectCommand="SELECT * FROM [Books]"></asp:SqlDataSource>
+        <asp:ObjectDataSource ID="ObjectDataSource6" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="GetBooksandAuthors" TypeName="DataSetTableAdapters.BooksandAuthorsTableAdapter"></asp:ObjectDataSource>
         <br />
         <br />
         <br />

@@ -13,7 +13,7 @@ Partial Class Authorsupdate
     Protected Sub InsertAuthor_Click(sender As Object, e As EventArgs) Handles InsertAuthor.Click
         cn.Open()
 
-        Dim cmd As New Data.SqlClient.SqlCommand(("INSERT INTO Books (BookTitle, BookSummary, AuthorID, PublishedYear) VALUES ('" & tbFirstName.Text & "','" & tbLastname.Text & "','" & tbCity.Text & "','" & tbState.Text & "','" & tbZip.Text & "','" & tbPhone.Text & "')"), cn)
+        Dim cmd As New Data.SqlClient.SqlCommand(("INSERT INTO Authors (FirstName, LastName, City, State, Zip, Phone) VALUES ('" & tbFirstName.Text & "','" & tbLastname.Text & "','" & tbCity.Text & "','" & tbState.Text & "','" & tbZip.Text & "','" & tbPhone.Text & "')"), cn)
         cmd.ExecuteNonQuery()
         cn.Close()
         lblMessage.Text = tbFirstName.Text & " " & tbLastname.Text & " " & "has been added!"

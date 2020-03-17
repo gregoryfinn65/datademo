@@ -15,7 +15,20 @@
 <body>
     <form id="form1" runat="server">
     <div>
+
+
+<nav>
+<ul>
+  <li><a href="Default.aspx">Home</a></li>
+  <li><a href="Details.aspx">Author Details</a></li>
+  <li><a href="Books.aspx">Books Details</a></li>
+  <li><a href="Authorsupdate.aspx">Add Authors</a></li>
+  <li><a href="Addbooks.aspx">Add Books</a></li>
+</ul>
+</nav><br /><br />
     <h1>Author and Book Page</h1>
+ 
+        <br />
         Book and Author from query string<br />
         <br />
         <asp:FormView ID="FormView2" runat="server" AllowPaging="True" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" DataSourceID="ObjectDataSource2" GridLines="Horizontal" Width="313px">
@@ -253,14 +266,7 @@
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <a href="Default.aspx">Default.aspx</a><br />
+   
     
     </div>
     </form>

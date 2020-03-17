@@ -10,6 +10,16 @@
 <body>
     <form id="form1" runat="server">
     <div>
+<nav>
+<ul>
+  <li><a href="Default.aspx">Home</a></li>
+  <li><a href="Details.aspx">Author Details</a></li>
+  <li><a href="Books.aspx">Books Details</a></li>
+  <li><a href="Authorsupdate.aspx">Add Authors</a></li>
+  <li><a href="Addbooks.aspx">Add Books</a></li>
+</ul>
+</nav><br /><br />
+
     <h1>Author Page</h1>
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="AuthorId" DataSourceID="ObjectDataSource1" ForeColor="Black" Height="50px" Width="550px">
             <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
@@ -56,7 +66,7 @@
         <br />
         <br />
         <br />
-        <a href="Default.aspx">Default.aspx</a><br />
+  
     
     </div>
     </form>

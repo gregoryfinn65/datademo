@@ -16,7 +16,6 @@
     <form id="form1" runat="server">
     <div>
 
-
 <nav>
 <ul>
   <li><a href="Default.aspx">Home</a></li>
@@ -24,8 +23,15 @@
   <li><a href="Books.aspx">Books Details</a></li>
   <li><a href="Authorsupdate.aspx">Add Authors</a></li>
   <li><a href="Addbooks.aspx">Add Books</a></li>
+  <li><a href="Authorsrpt.aspx">Authors Report</a></li>
+  <li><a href="Mybooksrpt.aspx">My Books Report</a></li>
+  <li> <a href="Booksrpt.aspx">Books Report</a></li>
 </ul>
-</nav><br /><br />
+</nav> 
+        
+        
+        
+        <br /><br />
     <h1>Author and Book Page</h1>
  
         <br />

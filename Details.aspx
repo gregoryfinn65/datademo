@@ -17,8 +17,11 @@
   <li><a href="Books.aspx">Books Details</a></li>
   <li><a href="Authorsupdate.aspx">Add Authors</a></li>
   <li><a href="Addbooks.aspx">Add Books</a></li>
+  <li><a href="Authorsrpt.aspx">Authors Report</a></li>
+  <li><a href="Mybooksrpt.aspx">My Books Report</a></li>
+  <li> <a href="Booksrpt.aspx">Books Report</a></li>
 </ul>
-</nav><br /><br />
+</nav> <br /><br />
 
     <h1>Author Page</h1>
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="#CCCCCC" BorderColor="#999999" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" CellSpacing="2" DataKeyNames="AuthorId" DataSourceID="ObjectDataSource1" ForeColor="Black" Height="50px" Width="550px">

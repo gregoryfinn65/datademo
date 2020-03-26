@@ -4,9 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Homw Page</title>
-    <link href="css/AuthorStyleSheet.css" rel="stylesheet" />
+    <title>Home Page</title>
+    <link href="css/AuthorStyleSheet.css" rel="stylesheet" /> 
 </head>
+
+  
 <body>
     <form id="form1" runat="server">
     <div>
@@ -17,8 +19,13 @@
   <li><a href="Books.aspx">Books Details</a></li>
   <li><a href="Authorsupdate.aspx">Add Authors</a></li>
   <li><a href="Addbooks.aspx">Add Books</a></li>
+  <li><a href="Authorsrpt.aspx">Authors Report</a></li>
+  <li><a href="Mybooksrpt.aspx">My Books Report</a></li>
+  <li> <a href="Booksrpt.aspx">Books Report</a></li>
 </ul>
-</nav><br /><br />
+</nav>   
+
+<br /><br />
     <h1>Home Page</h1>
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="ObjectDataSource1" DataTextField="State" DataValueField="State">
         </asp:DropDownList>
